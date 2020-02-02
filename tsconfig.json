@@ -1,0 +1,16 @@
+{
+    "include": ["src", "samples", "test"],
+    "exclude": ["samples/loose"],
+    "compilerOptions": {
+        "strict": true,
+        "outDir": "build",
+        "baseUrl": ".",
+        "paths": {
+            "strongcli": ["src/index"]
+        },
+        "lib": ["es2015", "dom"],
+        "target": "ES5",
+        "types": ["node"],
+        "declaration": true
+    },
+}

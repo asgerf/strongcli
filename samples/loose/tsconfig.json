@@ -1,0 +1,10 @@
+{
+    "include": ["."],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "strongcli": ["../../src"]
+        },
+        "strict": false,
+    }
+}
