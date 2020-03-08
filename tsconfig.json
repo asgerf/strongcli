@@ -1,5 +1,5 @@
 {
-    "include": ["src", "samples", "test"],
+    "include": ["src", "samples", "test", "tools"],
     "exclude": ["samples/loose"],
     "compilerOptions": {
         "strict": true,

@@ -19,7 +19,7 @@
         "lint": "yarn run eslint src/**/*.ts samples/**/*.ts",
         "fix": "yarn run eslint src/**/*.ts samples/**/*.ts --fix",
         "testw": "yarn run tape build/test/{test,commands}.js | faucet",
-        "dist": "yarn run build && rm -rf dist && mkdir -p dist && cp LICENSE package.json build/src/*.{js,d.ts} dist/"
+        "dist": "yarn run build && rm -rf dist && mkdir -p dist && cp LICENSE build/src/*.{js,d.ts} dist/ && node build/tools/make_package_json.js package.json > dist/package.json"
     },
     "author": {
         "email": "asger.feldthaus@gmail.com",
@@ -28,5 +28,7 @@
     "repository": {
         "url": "asgerf/strongcli"
     },
-    "keywords": ["typescript", "argparser", "cli"]
+    "keywords": ["typescript", "argparser", "cli"],
+    "main": "build/src/index.js",
+    "typings": "build/src/index.d.ts"
 }
