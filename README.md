@@ -33,9 +33,9 @@ let { options, args } = cli.main<Options>({
 import * as cli from 'strongcli';
 
 interface Options {
-    names?: string[];
+    names: string[];
     count: number;
-    force?: boolean;
+    force: boolean;
 }
 
 let { options, args } = cli.main<Options>({
@@ -64,7 +64,7 @@ For example, the following errors are found at compile-time:
 interface Options {
     foo?: string;
     bar?: number;
-    baz?: number[];
+    baz: number[];
 }
 cli.main<Options>({
     foo: {
