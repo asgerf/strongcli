@@ -164,7 +164,8 @@ let { options, args } = cli.main<Options>({
 })
 ```
 
-If no default is specified, value options will be `undefined` and flags will be `false`.
+If no default is specified, value options will be `undefined`, flags will be `false`,
+and repeatable value options will be empty arrays.
 
 The default can also be a function creating the default value:
 ```typescript
