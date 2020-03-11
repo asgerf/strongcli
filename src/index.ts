@@ -487,7 +487,7 @@ export class OptionParser<T> {
             if (args.length === 0 && this.parserSettings.helpIfEmpty) {
                 this.help();
             }
-            return this.parse(args || process.argv.slice(2));
+            return this.parse(args);
         } catch (e) {
             console.error(e instanceof ParseError ? e.toString() : e);
             process.exit(1);
