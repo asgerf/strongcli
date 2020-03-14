@@ -15,7 +15,7 @@ let { args } = program.main({});
 let filename = args[0];
 
 let json = JSON.parse(fs.readFileSync(filename, 'utf8'));
-let clearNames = ['scripts', 'main', 'typings']
+let clearNames = ['scripts', 'main', 'typings'];
 for (let name of clearNames) {
     json[name] = undefined;
 }
