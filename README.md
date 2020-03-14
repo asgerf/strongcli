@@ -10,12 +10,12 @@ A convenient but strict command-line parser with strong type checking for TypeSc
 
 ## Install
 ```bash
-$ npm install strongcli
+$ npm install @asgerf/strongcli
 ```
 
 ## Usage
 ```typescript
-import * as cli from 'strongcli';
+import * as cli from '@asgerf/strongcli';
 
 interface Options {
     name?: string;
@@ -30,7 +30,7 @@ let { options, args } = cli.main<Options>({
 
 ## More examples
 ```typescript
-import * as cli from 'strongcli';
+import * as cli from '@asgerf/strongcli';
 
 interface Options {
     names: string[];

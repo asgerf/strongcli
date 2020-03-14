@@ -1,5 +1,5 @@
 import tape = require('tape');
-import { OptionParser } from 'strongcli';
+import { OptionParser } from '@asgerf/strongcli';
 
 tape('simple options', t => {
     interface Options {

@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import * as cli from "strongcli";
+import * as cli from "@asgerf/strongcli";
 
 let program = cli.program({
     usage: `

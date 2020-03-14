@@ -1,5 +1,5 @@
 {
-    "name": "strongcli",
+    "name": "@asgerf/strongcli",
     "license": "MIT",
     "version": "0.1.0",
     "devDependencies": {
@@ -13,7 +13,7 @@
         "typescript": "^3.7.5"
     },
     "scripts": {
-        "link_src": "mkdir -p build/node_modules && rm build/node_modules/strongcli && ln -fs '../src' build/node_modules/strongcli",
+        "link_src": "mkdir -p build/node_modules/@asgerf && rm -f build/node_modules/@asgerf/strongcli && ln -fs '../../src' build/node_modules/@asgerf/strongcli",
         "watch": "yarn run link_src && tsc -p . -w",
         "build": "yarn run link_src && tsc -p .",
         "lint": "yarn run eslint src/**/*.ts samples/**/*.ts",

@@ -1,4 +1,4 @@
-import * as cli from 'strongcli';
+import * as cli from '@asgerf/strongcli';
 
 let program = cli.program('commands').commandSet();
 

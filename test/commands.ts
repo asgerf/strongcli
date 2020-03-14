@@ -1,5 +1,5 @@
 import tape = require('tape');
-import * as cli from 'strongcli';
+import * as cli from '@asgerf/strongcli';
 
 interface AddOptions {
     type?: string;

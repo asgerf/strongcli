@@ -1,4 +1,4 @@
-import * as cli from 'strongcli';
+import * as cli from '@asgerf/strongcli';
 
 export interface Options {
     thing: string[][];
