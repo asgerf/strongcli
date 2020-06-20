@@ -19,5 +19,6 @@ let clearNames = ['scripts', 'main', 'typings'];
 for (let name of clearNames) {
     json[name] = undefined;
 }
+json.version = json.version.replace('-unpublished', '');
 
 console.log(JSON.stringify(json, undefined, 4));

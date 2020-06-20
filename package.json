@@ -1,7 +1,7 @@
 {
     "name": "@asgerf/strongcli",
     "license": "MIT",
-    "version": "0.1.0",
+    "version": "0.1.0-unpublished",
     "devDependencies": {
         "@types/node": "^13.7.0",
         "@types/tape": "^4.2.33",
