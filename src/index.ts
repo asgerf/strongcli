@@ -551,10 +551,10 @@ export class OptionParser<T> {
             let option = options[key];
             let names = this.getNamesFromOption(option, key).join(', ');
             if (option.valueHint) {
-                names += ` <${option.valueHint}>`;
+                names += ' ' + angleBracket(option.valueHint);
             } else if (option.value) {
                 let hint = this.getValueHint(option.value);
-                names += ` <${hint}>`;
+                names += ' ' + angleBracket(hint);
             }
             flagColumn.push(names);
             if (names.length > flagColumnWidth) {
@@ -781,6 +781,10 @@ function hasOwnProp(obj: object, prop: string) {
 
 function camelToKebabCase(str: string) {
     return str.replace(/[a-z][A-Z]|[A-Z]{2}[a-z]/g, x => x.charAt(0) + '-' + x.substring(1)).toLowerCase();
+}
+
+function angleBracket(str: string) {
+    return str.charAt(0) === '<' ? str : `<${str}>`;
 }
 
 function padRight(str: string, len: number) {
