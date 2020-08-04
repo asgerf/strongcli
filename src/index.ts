@@ -1058,3 +1058,29 @@ function trimLines(str: string) {
 export function required(): never {
     throw new Error('Do not call this function. Just set it to the default.');
 }
+
+/**
+ * Use as the `value` option to accept only one of specified values.
+ *
+ * If given an array, accepts any of the values and returns the value itself.
+ *
+ * If given an object, accepts any of the own properties of that object and returns the
+ * value of the corresponding property.
+ */
+export function oneOf<T extends string | number>(values: T[] | Record<string, T>): (arg: string) => T {
+    if (Array.isArray(values)) {
+        return (arg: string) => {
+            if (!values.includes(arg as T)) {
+                throw new ParseError('Must be one of ' + values.join(', '));
+            }
+            return arg as T;
+        };
+    } else {
+        return (arg: string) => {
+            if (!hasOwnProp(values, arg)) {
+                throw new ParseError('Must be one of ' + Object.keys(values).join(', '));
+            }
+            return values[arg];
+        };
+    }
+}
