@@ -1066,6 +1066,30 @@ export function required(): never {
  *
  * If given an object, accepts any of the own properties of that object and returns the
  * value of the corresponding property.
+ *
+ * If used in combination with an enum declaration, it works best if the enum
+ * values are initialized to their own name.
+ *
+ * For example:
+ * ```ts
+ * enum Format {
+ *   html = 'html',
+ *   markdown = 'markdown',
+ * }
+ * 
+ * interface Options {
+ *   format: Format;
+ * }
+ *
+ * let { options, args } = cli.main<Options>({
+ *   format: {
+ *     value: cli.oneOf(Format),
+ *     default: Format.html,
+ *     description: `The format to use. Defaults to 'html.'\n` +
+ *       `Possible values are ${Object.keys(Format).join(', ')}.`
+ *   }
+ * })
+ * ```
  */
 export function oneOf<T extends string | number>(values: T[] | Record<string, T>): (arg: string) => T {
     if (Array.isArray(values)) {
