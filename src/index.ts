@@ -1108,3 +1108,11 @@ export function oneOf<T extends string | number>(values: T[] | Record<string, T>
         };
     }
 }
+
+/**
+ * Prints the given message to stderr and terminates the process with exit code 1.
+ */
+export function fail(message: string): never {
+    console.error(message);
+    process.exit(1);
+}
